@@ -38,9 +38,10 @@ use crate::regex_helper::{pattern_has_uppercase_char, pattern_matches_strings_wi
     not(windows),
     not(target_os = "android"),
     not(target_os = "macos"),
+    not(target_os = "illumos"),
     not(target_env = "musl")
 ))]
-#[global_allocator]
+// #[global_allocator]
 static ALLOC: jemallocator::Jemalloc = jemallocator::Jemalloc;
 
 // vivid --color-mode 8-bit generate molokai
